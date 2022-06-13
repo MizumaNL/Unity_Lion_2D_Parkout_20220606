@@ -37,9 +37,20 @@ namespace NL
         #region 事件:程式的入口
         // 開使條件:遊戲撥放執行一次
         // 始化設定:例如: 遊戲開始發放500金幣
+        private void Awake()
+        {
+            // ani 指定 角色身上的Animator
+            ani = GetComponent<Animator>();
+            rig = GetComponent<Rigidbody2D>();
+        }
         private void Start()
         {
             print("哈囉,麻德發科");
+        }
+        //更新事件:每秒執行約60次 60FPS Frame per second
+        private void Update()
+        {
+            print("<color=lime>系統持續更新中@@@~</color>");
         }
         #endregion
 

@@ -31,7 +31,16 @@ namespace NL
         #endregion
 
         #region 功能:實作該系統的複雜方法
-
+        //方法 Method
+        //語法
+        //修飾詞 傳回資料類型 方法名稱( ) { }
+        /// <summary>
+        /// 跑步功能
+        /// </summary>
+        private void Run()
+        {
+            print("跑步中~");
+        }
         #endregion
 
         #region 事件:程式的入口
@@ -45,12 +54,14 @@ namespace NL
         }
         private void Start()
         {
-            print("哈囉,麻德發科");
+            //print("哈囉,麻德發科");
         }
         //更新事件:每秒執行約60次 60FPS Frame per second
         private void Update()
         {
-            print("<color=lime>系統持續更新中@@@~</color>");
+            //print("<color=lime>系統持續更新中@@@~</color>");
+            Run();
+            rig.velocity = new Vector2(speedRun, rig.velocity.y);
         }
         #endregion
 

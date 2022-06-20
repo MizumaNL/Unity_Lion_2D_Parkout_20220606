@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 862132838}
   - component: {fileID: 862132839}
   - component: {fileID: 862132840}
+  - component: {fileID: 862132841}
   m_Layer: 0
   m_Name: "\u5154"
   m_TagString: Untagged
@@ -307,7 +308,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -325,8 +326,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fc5c6bc4bb5fb143ab3cf25ade6434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRun: 3.5
+  speedRun: 4.4
   hieghtJump: 350
+--- !u!114 &862132841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862132834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3ada52be0788b458a1ea58a9b404ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hieghtJump: 700
 --- !u!1 &1103711510
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,13 +483,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1243219800}
   - component: {fileID: 1243219799}
+  - component: {fileID: 1243219801}
   m_Layer: 0
   m_Name: "\u7DF4\u7FD2API"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1243219799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243219798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be68c1d76f6685b4e92dca331eb182f8, type: 3}
   m_Name: 
@@ -503,6 +518,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1243219801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243219798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b33dd254bbf08408acbe1b539e343d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rabbit: {fileID: 862132834}
+  startPoint: {fileID: 1103711513}
 --- !u!1 &1479763402
 GameObject:
   m_ObjectHideFlags: 3
@@ -993,7 +1022,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2692307, y: 1}
+    m_SensorSize: {x: 0.9802761, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -27,6 +27,7 @@ namespace NL
         private float hieghtJump = 350;
         private Animator ani;
         private Rigidbody2D rig;
+        
 
         #endregion
 
@@ -61,7 +62,17 @@ namespace NL
         {
             //print("<color=lime>系統持續更新中@@@~</color>");
             Run();
-            rig.velocity = new Vector2(speedRun, rig.velocity.y);
+
+            float h = Input.GetAxis("Horizontal");
+            rig.velocity = new Vector2(speedRun * h, rig.velocity.y);
+        }
+        private void OnEnable()
+        {
+            
+        }
+        private void OnDisable()
+        {
+            rig.velocity = Vector3.zero;
         }
         #endregion
 

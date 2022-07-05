@@ -21,7 +21,7 @@ namespace NL
                 SystemRun.enabled = false;
                 systemJump.enabled = false;
                 manageFinal.enabled = true;
-                manageFinal.stringTitle = "Confratulation";
+                manageFinal.stringTitle = "Congratulation";
             }
         }
         private void OnTriggerExit2D(Collider2D collision)

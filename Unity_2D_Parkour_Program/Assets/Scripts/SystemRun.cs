@@ -27,7 +27,9 @@ namespace NL
         private float hieghtJump = 350;
         private Animator ani;
         private Rigidbody2D rig;
-        
+        private SpriteRenderer spr;
+        private bool clickRun;
+
 
         #endregion
 
@@ -40,7 +42,7 @@ namespace NL
         /// </summary>
         private void Run()
         {
-            print("跑步中~");
+            //print("跑步中~");
         }
         #endregion
 
@@ -52,6 +54,7 @@ namespace NL
             // ani 指定 角色身上的Animator
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
+            spr = GetComponent<SpriteRenderer>();
         }
         private void Start()
         {
@@ -62,20 +65,53 @@ namespace NL
         {
             //print("<color=lime>系統持續更新中@@@~</color>");
             Run();
+            RunKey();
+            UpdateAnimator();
 
             float h = Input.GetAxis("Horizontal");
             rig.velocity = new Vector2(speedRun * h, rig.velocity.y);
         }
         private void OnEnable()
         {
-            
+
         }
         private void OnDisable()
         {
             rig.velocity = Vector3.zero;
         }
-        #endregion
+        private void RunKey()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                //print("跳躍中~");
+                clickRun = true;
 
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                clickRun = false;
+            }
+            
+            if (rig.velocity.x > 0.1f)
+            {
+                //spr.flipX = false;
+                transform.eulerAngles = Vector3.zero;
+            }
+            if (rig.velocity.x < -0.1f)
+            {
+                //spr.flipX = true;
+                transform.eulerAngles = new Vector3(0,180);
+            }
+
+
+
+
+        }
+        private void UpdateAnimator()
+        {
+            ani.SetBool("開關Run", clickRun);
+        }
+        #endregion
 
     }
 }
